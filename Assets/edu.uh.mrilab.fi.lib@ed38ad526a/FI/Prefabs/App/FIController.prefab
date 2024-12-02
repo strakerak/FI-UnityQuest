@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3614516669080410926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3614516669080410921}
+  - component: {fileID: 5239616536401202763}
+  - component: {fileID: 3614516669080410920}
+  - component: {fileID: 3614516669080410927}
+  - component: {fileID: 3614516669080410923}
+  m_Layer: 0
+  m_Name: FIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3614516669080410921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614516669080410926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5239616536401202763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614516669080410926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7115643e16d17346b971f28438acdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3614516669080410920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614516669080410926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5316f9b7e75bfc4db503a12e659eeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ServerMessage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3614516669080410927}
+        m_TargetAssemblyTypeName: fi.MessageDispatcher, Assembly-CSharp
+        m_MethodName: onServerMessage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ServerStatus:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3614516669080410927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614516669080410926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87282d00250be84f8de52e47f2726b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewAuthenticationResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3614516669080410920}
+        m_TargetAssemblyTypeName: fi.ServerConnection, Assembly-CSharp
+        m_MethodName: onNewAuthenticationResponse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NewApplicationResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  NewModuleResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  NewDataResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3614516669080410923}
+        m_TargetAssemblyTypeName: fi.DataManager, Assembly-CSharp
+        m_MethodName: onNewDataResponse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  NewErrorResponse:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3614516669080410923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3614516669080410926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd06e0e4ba5a804186892abdbaf6b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,0 +1,16 @@
+{
+  "name": "edu.uh.mrilab.fi.lib",
+  "version": "1.2.1",
+  "displayName": "FI-UnityLib",
+  "description": "Common assets for FIs developed with Unity",
+  "unity": "2018.1",
+  "keywords": [
+    "FI",
+    "Framework Interface"
+  ],
+  "author": {
+    "name": "VelazcoJD",
+    "email": "jdvelazcogarcia@uh.edu",
+    "url": "https://github.com/UHMRILab/FI-UnityLib"
+  }
+}
