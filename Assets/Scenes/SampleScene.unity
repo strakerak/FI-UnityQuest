@@ -2734,6 +2734,7 @@ GameObject:
   - component: {fileID: 296729298}
   - component: {fileID: 296729297}
   - component: {fileID: 296729296}
+  - component: {fileID: 296729299}
   m_Layer: 5
   m_Name: Button_SendLogs
   m_TagString: Untagged
@@ -2804,7 +2805,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 296729297}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 296729299}
+        m_TargetAssemblyTypeName: EmailFactory, Assembly-CSharp
+        m_MethodName: SendEmail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296729297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,6 +2856,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296729294}
   m_CullTransparentMesh: 1
+--- !u!114 &296729299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296729294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c18bf1d77d9e4249971244dea222e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311105312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,11 +4432,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnableLogging: 1
   MainMenuPrefab: {fileID: 0}
-  ModulePrefab: {fileID: 0}
+  ModulePrefab: {fileID: 4764411401700753985, guid: 3d1660825e2f5ed4fa45542c61d3fc13, type: 3}
   ModuleListMenuObject: {fileID: 0}
   ConnectionMenuObject: {fileID: 2004444159}
   ARSettingsMenuObject: {fileID: 1818334184}
-  ModuleMenuObject: {fileID: 0}
+  ModuleMenuObject: {fileID: 820793686}
   SettingsMenuObject: {fileID: 1630690053}
   NeuroDemoControllerPrefab: {fileID: 0}
   CardiacDemoControllerPrefab: {fileID: 0}

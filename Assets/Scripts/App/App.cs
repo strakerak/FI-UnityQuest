@@ -462,7 +462,7 @@ public class App : fi.App
             {
                 Debug.Log("Cleanup Active Demo");
                 Cleanup.cleanupStudy();
-            }   
+            }
         }
 
         Debug.Log(string.Format("{0} | To Server | Subscribe to Module", TimeZoneInfo.ConvertTimeToUtc(DateTime.Now)));
