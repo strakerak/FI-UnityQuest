@@ -4438,8 +4438,8 @@ MonoBehaviour:
   ARSettingsMenuObject: {fileID: 1818334184}
   ModuleMenuObject: {fileID: 820793686}
   SettingsMenuObject: {fileID: 1630690053}
-  NeuroDemoControllerPrefab: {fileID: 0}
-  CardiacDemoControllerPrefab: {fileID: 0}
+  NeuroDemoControllerPrefab: {fileID: 1488808926100659095, guid: 917bea7df627048b9bccade18c2f597f, type: 3}
+  CardiacDemoControllerPrefab: {fileID: 1488808926100659095, guid: 917bea7df627048b9bccade18c2f597f, type: 3}
   DemosListMenuObject: {fileID: 0}
   LogPopUpWindow: {fileID: 1131238690}
 --- !u!1 &536706590
