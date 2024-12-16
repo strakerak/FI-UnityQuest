@@ -2185,7 +2185,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 4.12
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -2624,6 +2624,7 @@ GameObject:
   - component: {fileID: 271290758}
   - component: {fileID: 271290757}
   - component: {fileID: 271290756}
+  - component: {fileID: 271290759}
   m_Layer: 5
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -2722,6 +2723,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271290754}
   m_CullTransparentMesh: 1
+--- !u!114 &271290759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271290754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3768fe280903842fdaa2a016022624f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  youtubeUrl: https://drive.google.com/file/d/1l6u-c4vwR_-APIl4ZQxYG30tcN9jT1Oy/view?usp=sharing
+  is360Video: 0
+  cli: 1
 --- !u!1 &296729294
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,10 +4081,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2009741927}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 526525284}
+        m_TargetAssemblyTypeName: App, Assembly-CSharp
+        m_MethodName: onLogMenuClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7771,10 +7787,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 684688976}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 526525284}
+        m_TargetAssemblyTypeName: App, Assembly-CSharp
+        m_MethodName: onServerConnectionButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10062,10 +10078,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 684688976}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 526525284}
+        m_TargetAssemblyTypeName: App, Assembly-CSharp
+        m_MethodName: onShowModulesButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11377,10 +11393,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2009741927}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 526525284}
+        m_TargetAssemblyTypeName: App, Assembly-CSharp
+        m_MethodName: onDemosListClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12518,10 +12534,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2009741927}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 526525284}
+        m_TargetAssemblyTypeName: App, Assembly-CSharp
+        m_MethodName: onServerConnectionButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15897,6 +15913,7 @@ GameObject:
   - component: {fileID: 1833619388}
   - component: {fileID: 1833619387}
   - component: {fileID: 1833619386}
+  - component: {fileID: 1833619389}
   m_Layer: 5
   m_Name: Button_PlayVideo
   m_TagString: Untagged
@@ -15967,7 +15984,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1833619387}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1833619389}
+        m_TargetAssemblyTypeName: testactivescript, Assembly-CSharp
+        m_MethodName: whenShitClicks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1833619387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16006,6 +16035,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833619384}
   m_CullTransparentMesh: 1
+--- !u!114 &1833619389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833619384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec5949b81881db449944a3f32d46961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videogohesag: {fileID: 0}
+  videogohesag2: {fileID: 0}
 --- !u!1 &1835722386
 GameObject:
   m_ObjectHideFlags: 0
@@ -17507,10 +17550,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2009741927}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 526525284}
+        m_TargetAssemblyTypeName: App, Assembly-CSharp
+        m_MethodName: onARSettingsButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
