@@ -36,7 +36,7 @@ public class EmailFactory : MonoBehaviour
         SmtpServer.Port = 587;
 
         mail.From = new MailAddress("uhmrilabrelay@outlook.com");
-        mail.To.Add(new MailAddress("stawakko@cougarnet.uh.edu"));
+        mail.To.Add(new MailAddress("hneeli@cougarnet.uh.edu"));
 
         mail.Subject = "FI3D Client Application Log";
         ///mail.Subject = "FI3D Client Application Log" + SystemInfo.deviceModel + SystemInfo.deviceName + DateTime.UtcNow;
