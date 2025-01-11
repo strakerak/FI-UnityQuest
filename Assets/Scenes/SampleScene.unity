@@ -6218,7 +6218,7 @@ MonoBehaviour:
   ModuleMenuObject: {fileID: 820793686}
   SettingsMenuObject: {fileID: 1630690053}
   NeuroDemoControllerPrefab: {fileID: 1488808926100659095, guid: 917bea7df627048b9bccade18c2f597f, type: 3}
-  CardiacDemoControllerPrefab: {fileID: 1488808926100659095, guid: 917bea7df627048b9bccade18c2f597f, type: 3}
+  CardiacDemoControllerPrefab: {fileID: 7371934545367919035, guid: 6ae9de15d88c7438785956568503b38e, type: 3}
   DemosListMenuObject: {fileID: 1452022909}
   LogPopUpWindow: {fileID: 1131238690}
 --- !u!1 &536706590
