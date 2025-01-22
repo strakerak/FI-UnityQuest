@@ -9,7 +9,7 @@ namespace fi
     {
         public ImageVisual ImageSlicePrefab;
         public ModelVisual ModelPrefab;
-        
+
         ImageVisual imageSlice;
         ModelVisual modelEpi;
         ModelVisual modelEndo;
@@ -41,7 +41,7 @@ namespace fi
         /// Key is Phase number (0-24): Size 25
         /// </summary>
         Dictionary<int, int[]> sliceDataValues = new Dictionary<int, int[]>();
-        
+
         /// <summary>
         /// Dictionary to store Final Color Values corresponding to each Phase and Slice (25x10)
         /// Each key is combination of (Phase, Slice)
@@ -55,7 +55,7 @@ namespace fi
         /// </summary>
         int Phase;
         int Slice;
-        
+
         // Start is called before the first frame update
         void Start()
         {
@@ -68,19 +68,21 @@ namespace fi
 
             //Create Endocardium
             modelEndo = Instantiate(ModelPrefab, transform);
-            //modelEndo.insideoutModel.GetComponent<MeshFilter>().mesh = endoMesh[0];
+            modelEndo.GetComponent<MeshFilter>().mesh = endoMesh[0]; //this used to be modelEndo.insideoutModel.GetComponent<MeshFilter>().mesh = endoMesh[0] -- change that back and comment it out if it wasn't supposed to be there cause idk why Hossein Removed it. 
             //modelEndo.insideoutModel.AddComponent<BoxCollider>();
 
             //modelEndo.insideoutModel.GetComponent<Renderer>().material = endoMat;
             modelEndo.GetComponent<Renderer>().material = endoMat;
+            //modelEndo.GetComponent<MeshFilter>().mesh = endoMesh[Phase];
             modelEndo.transform.localScale = new Vector3(0.003f, 0.003f, 0.003f);
             modelEndo.gameObject.name = "Endocardium";
 
             //Create Epicardium
             modelEpi = Instantiate(ModelPrefab, transform);
-            //modelEpi.insideoutModel.GetComponent<MeshFilter>().mesh = epiMesh[0];
+            modelEpi.GetComponent<MeshFilter>().mesh = epiMesh[0]; //this used to be modelEpi.insideoutModel.GetComponent<MeshFilter>().mesh = epiMesh[0] -- change that back and comment it out if it wasn't supposed to be there cause idk why Hossein Removed it. 
             //modelEpi.insideoutModel.AddComponent<BoxCollider>();
             //modelEpi.insideoutModel.GetComponent<Renderer>().material = epiMat;
+            //modelEpi.GetComponent<MeshFilter>().mesh = epiMesh[Phase];
             modelEpi.GetComponent<Renderer>().material = epiMat;
             modelEpi.transform.localScale = new Vector3(0.003f, 0.003f, 0.003f);
             modelEpi.transform.localPosition = modelEndo.transform.localPosition;
@@ -104,7 +106,7 @@ namespace fi
         /// <param name="s"> Int Value of Current Slice </param>  
         void setValues(int p, int s)
         {
-            if (Phase !=p)
+            if (Phase != p)
                 Phase = p;
 
             if (Slice != s)
@@ -133,7 +135,7 @@ namespace fi
                 Debug.Log(string.Format("Incorrect Slice Requested {0} Max Slice: {1}", index, Dimensions[2]));
                 return;
             }
-           
+
             imageSlice = this.transform.Find("StudySlice").GetComponent<ImageVisual>();
             int[] arr_slice = new int[256 * 192];
             Color[] values = new Color[Dimensions[0] * Dimensions[1]];
@@ -141,7 +143,7 @@ namespace fi
             //Check if Already Parsed
             Tuple<int, int> key = new Tuple<int, int>(Phase, index);
             if (sliceColorValues.ContainsKey(key))
-                values = sliceColorValues[key];            
+                values = sliceColorValues[key];
             else
             {
                 int pos = (index - 1) * (Dimensions[0] * Dimensions[1]);
@@ -161,18 +163,18 @@ namespace fi
                 sliceColorValues.Add(key, values);
             }
 
-             Texture2D texture = new Texture2D(Dimensions[0], Dimensions[1], TextureFormat.RGBAFloat, false);
-             texture.SetPixels(values);
-             texture.Apply();
-             imageSlice.backTexture.GetComponent<Renderer>().material.mainTexture = texture;
-             imageSlice.sliceTranslation.GetComponent<Renderer>().material.mainTexture = texture;
+            Texture2D texture = new Texture2D(Dimensions[0], Dimensions[1], TextureFormat.RGBAFloat, false);
+            texture.SetPixels(values);
+            texture.Apply();
+            imageSlice.backTexture.GetComponent<Renderer>().material.mainTexture = texture;
+            imageSlice.sliceTranslation.GetComponent<Renderer>().material.mainTexture = texture;
 
-             Vector3 slicePosition = imageSlice.ImageSlicePosition;
+            Vector3 slicePosition = imageSlice.ImageSlicePosition;
 
-             imageSlice.sliceTranslation.transform.localPosition = new Vector3(
-                slicePosition.x,
-                slicePosition.y,
-                +spacing[2] * index);
+            imageSlice.sliceTranslation.transform.localPosition = new Vector3(
+               slicePosition.x,
+               slicePosition.y,
+               +spacing[2] * index);
 
             setValues(Phase, index);
             //Debug.Log(string.Format("Action Complete {0}", index));
@@ -218,20 +220,20 @@ namespace fi
         public void phaseChange(int phase)
         {
             Debug.Log(phase);
-            if (phase <= 0 || phase > 25 )
+            if (phase <= 0 || phase > 25)
             {
                 Debug.Log(string.Format("Incorrect Phase Requested {0} Max Value: 25", phase));
                 return;
             }
 
-            //modelEpi.insideoutModel.GetComponent<MeshFilter>().mesh = epiMesh[phase-1];
+            modelEpi.GetComponent<MeshFilter>().mesh = epiMesh[phase - 1]; //this used to be modelEpi.insideoutModel.GetComponent<MeshFilter>().mesh = epiMesh[phase-1] -- change that back and comment it out if it wasn't supposed to be there cause idk why Hossein Removed it. 
             //modelEpi.insideoutModel.GetComponent<Renderer>().material = epiMat;
             modelEpi.GetComponent<Renderer>().material = epiMat;
-            
-            //modelEndo.insideoutModel.GetComponent<MeshFilter>().mesh = endoMesh[phase-1];
+
+            modelEndo.GetComponent<MeshFilter>().mesh = endoMesh[phase - 1]; //this used to be modelEndo.insideoutModel.GetComponent<MeshFilter>().mesh = endoMesh[phase-1] -- change that back and comment it out if it wasn't supposed to be there cause idk why Hossein Removed it. 
             //modelEndo.insideoutModel.GetComponent<Renderer>().material = endoMat;
             modelEndo.GetComponent<Renderer>().material = endoMat;
-            
+
             setValues(phase, Slice);
             dataChange(Slice);
 
