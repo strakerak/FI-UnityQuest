@@ -74,7 +74,7 @@ namespace fi
             //modelEndo.insideoutModel.GetComponent<Renderer>().material = endoMat;
             modelEndo.GetComponent<Renderer>().material = endoMat;
             //modelEndo.GetComponent<MeshFilter>().mesh = endoMesh[Phase];
-            modelEndo.transform.localScale = new Vector3(0.0025f, 0.0025f, 0.0025f);
+            modelEndo.transform.localScale = new Vector3(0.003f, 0.003f, 0.003f);
             modelEndo.gameObject.name = "Endocardium";
 
             //Create Epicardium

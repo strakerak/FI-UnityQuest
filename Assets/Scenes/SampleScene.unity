@@ -4514,7 +4514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2888388935616455836, guid: 7d2aceca4ff5a4f4da49665d2763aa6e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00096224557
+      value: 0.00012690181
       objectReference: {fileID: 0}
     - target: {fileID: 2888388935616455836, guid: 7d2aceca4ff5a4f4da49665d2763aa6e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -24900,6 +24900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1964373280}
   - component: {fileID: 1964373281}
+  - component: {fileID: 1964373282}
   m_Layer: 0
   m_Name: LLM (1)
   m_TagString: Untagged
@@ -24932,6 +24933,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9898ca92690864a28e9d37d7ba07036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  llmCharacter: {fileID: 1671817687}
+  playerText: {fileID: 914469171}
+  AIText: {fileID: 1638852380}
+--- !u!114 &1964373282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964373278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162e77d443c2df77b8297c1dcdfbfdce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   llmCharacter: {fileID: 1671817687}

@@ -3,9 +3,14 @@ using LLMUnity;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Reflection;
+using Unity.VisualScripting;
+using System.Linq;
+using fi;
+
 
 namespace LLMUnitySamples
 {
+
     public static class Functions
     {
         static System.Random random = new System.Random();
@@ -27,6 +32,90 @@ namespace LLMUnitySamples
             string[] emotion = new string[]{"happy", "sad", "exhilarated", "ok"};
             return "I am feeling " + emotion[random.Next(emotion.Length)];
         }
+
+        public static string ActivateCardiac()
+        {
+            GameObject FIController = GameObject.Find("FIController");
+            FIController.GetComponent<App>().onCardiacDemoClick();
+
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            go.transform.position = new Vector3(0, 0, 0.5f);
+
+            return "I have turned on the Cardiac Demo Controller!";
+        }
+
+        public static string ActivateNeuro()
+        {
+            GameObject FIController = GameObject.Find("FIController");
+            FIController.GetComponent<App>().onNeuroDemoClick();
+
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            go.transform.position = new Vector3(0, 0, 0.5f);
+
+            return "I have turned on the Neuro activation!";
+        }
+
+        public static string SetPhase()
+        {
+            int phase = random.Next(25);
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            go.transform.GetChild(0).gameObject.GetComponent<CardiacScene>().phaseChange(phase);
+            return "Phase has been changed to " + phase.ToString();
+        }
+
+        public static string SetSlice()
+        {
+            int slice = random.Next(10);
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            go.transform.GetChild(0).gameObject.GetComponent<CardiacScene>().dataChange(slice);
+            return "Slice has been changed to " + slice.ToString();
+        }
+
+        public static string RotateDemoX()
+        {
+            float val = random.Next(90);
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            if(go!=null)
+            {
+                go.transform.Rotate(go.transform.rotation.x + val, 0,0);
+                return "I found the Game Object! "  + val.ToString();
+            }
+            else
+            {
+                return "I can't find it";
+            }
+        }
+
+        public static string RotateDemoY()
+        {
+            float val = random.Next(90);
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            if (go != null)
+            {
+                go.transform.Rotate(0, go.transform.rotation.y + val, 0);
+                return "I found the Game Object! " + val.ToString();
+            }
+            else
+            {
+                return "I can't find it";
+            }
+        }
+
+        public static string RotateDemoZ()
+        {
+            float val = random.Next(90);
+            GameObject go = GameObject.Find("DemoController(Clone)");
+            if (go != null)
+            {
+                go.transform.Rotate(0,0,go.transform.rotation.z + val);
+                return "I found the Game Object! " + val.ToString();
+            }
+            else
+            {
+                return "I can't find it";
+            }
+        }
+
     }
 
     public class FunctionCalling : MonoBehaviour
@@ -76,6 +165,19 @@ namespace LLMUnitySamples
             string result = CallFunction(functionName);
             AIText.text = $"Calling {functionName}\n{result}";
             playerText.interactable = true;
+        }
+
+        public void SetAIText(string text)
+        {
+            AIText.text = text;
+        }
+
+
+        public void AIReplyComplete()
+        {
+            playerText.interactable = true;
+            playerText.Select();
+            playerText.text = "";
         }
 
         public void CancelRequests()
